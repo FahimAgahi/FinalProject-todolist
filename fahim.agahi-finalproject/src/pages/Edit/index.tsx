@@ -3,11 +3,16 @@ import { useStyles } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { Menu, MenuItem } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 // function EditPage() {
 export const EditPage: React.FC = ({}) => {
   // const [isOpen, anchorEl, openMenu, closeMenu] = useMenu();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    navigate("/homePage");
+  };
   const handleClose = (): void => {
     setAnchorEl(null);
   };
@@ -62,7 +67,12 @@ export const EditPage: React.FC = ({}) => {
             />
             Edit
           </button>
-          <button className={classes.cancelButton}>Cancel</button>
+          <form
+            className={classes.cancelButton}
+            onSubmit={() => handleSubmit()}
+          >
+            <button className={classes.cancelButton}>Cancel</button>
+          </form>
         </div>
       </div>
       {/* <div className={classes.parent}>

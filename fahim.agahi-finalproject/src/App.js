@@ -1,17 +1,11 @@
-// import Home from "./components/Home";
-import { HomePage } from "./pages/Home";
-
 import React, { Component }  from 'react';
-import EditPage from "./pages/Edit";
+import Router from './router/pages';
 
 function App() {
   return (
     <>
       <div className="App">
-        <div>
-          {/* <HomePage/> */}
-          <EditPage/>
-        </div>
+        <Router />
       </div>
     </>
   
