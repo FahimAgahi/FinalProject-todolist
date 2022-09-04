@@ -22,7 +22,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
         marginTop: '0px'
       },
       textAlign: {
-        marginLeft: '10%'
+        marginLeft: '10%',
+        fontWeight:'bold'
       },
       div: {
         display: 'flex',
@@ -36,20 +37,23 @@ export const useStyles = makeStyles((theme: Theme) => ({
         fontSize: '21px',
         fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"
       },
-      textarea: {
+      textarea:{
         resize: 'none',
         backgroundColor: '#e9eaeb',
-        color: '#a2a1a1',
+        color: 'black',
         fontWeight: '300',
+        fontSize:'20px',
         fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif",
+        paddingTop: '3px',
+        paddingLeft: '3px',
         width: '100%',
         borderTop: '0px',
         borderRight: '0px',
         borderLeft: '0px',
         borderTopRightRadius: '4px',
-        borderTopLeftRadius: '4px',
-        borderBottomColor: '#3574b4',
-      },
+        borderTopLeftRadius: '4px' ,
+        borderBottomColor: '#3574b4'
+    },
       addButton: {
         width: '100%',
         height: '50px',
@@ -57,8 +61,10 @@ export const useStyles = makeStyles((theme: Theme) => ({
         color: 'white',
         border: 'none',
         borderRadius: '3px',
-        fontWeight: 'lighter',
-        padding: '0px'
+        fontWeight: 'normal',
+        fontSize: '16px',
+        padding: '0px',
+        alignItems: 'center'
       },
       cancelButton: {
         width: '100%',
@@ -67,7 +73,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
         color: 'white',
         border: 'none',
         borderRadius: '3px',
-        fontWeight: 'lighter',
+        fontWeight: 'normal',
+        fontSize: '16px',
         marginLeft: '4px'
       },
       parent: {

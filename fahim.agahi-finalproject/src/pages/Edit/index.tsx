@@ -54,15 +54,15 @@ export const EditPage: React.FC = ({}) => {
           <button className={classes.addButton}>
             <FontAwesomeIcon
               fixedWidth
-              color="black"
-              size="2x"
+              color="white"
+              size="1x"
               icon={faEdit}
               // onClick={}
               cursor="pointer"
             />
             Edit
           </button>
-          <button className={classes.cancelButton}>cancel</button>
+          <button className={classes.cancelButton}>Cancel</button>
         </div>
       </div>
       {/* <div className={classes.parent}>
