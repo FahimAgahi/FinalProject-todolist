@@ -59,46 +59,6 @@ export const HomePage: React.FC = ({}) => {
                 </div>
               </div>
             </div>
-            {/* <div className={classes.taskContainer}>
-              <div className={classes.taskDetails}>
-                <span className={classes.p1}>Task Title Goes here</span>
-                <div className={classes.taskDetailDescription}>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Eaque est reprehenderit maxime explicabo sapiente .
-                </div>
-                <div className={classes.buttonContainer}>
-                  <button className={classes.stateButton}>Todo</button>
-                  <FontAwesomeIcon
-                    fixedWidth
-                    color="black"
-                    size="2x"
-                    icon={faEdit}
-                    // onClick={}
-                    cursor="pointer"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className={classes.taskContainer}>
-              <div className={classes.taskDetails}>
-                <span className={classes.p1}>Task Title Goes here</span>
-                <div className={classes.taskDetailDescription}>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Eaque est reprehenderit maxime explicabo sapiente .
-                </div>
-                <div className={classes.buttonContainer}>
-                  <button className={classes.stateButton}>Todo</button>
-                  <FontAwesomeIcon
-                    fixedWidth
-                    color="black"
-                    size="2x"
-                    icon={faEdit}
-                    // onClick={}
-                    cursor="pointer"
-                  />
-                </div>
-              </div>
-            </div> */}
             <div className={classes.taskContainer}>
               <div className={classes.taskDetails}>
                 <span className={classes.p1}>Task Title Goes here</span>
