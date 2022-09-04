@@ -39,9 +39,6 @@ export default function reducer(state = [], action) {
         ),
       ]
 
-    // case 'taskTitleChanged':
-    // case 'taskDescriptionChanged':
-    // case 'taskStatusChange':
     default:
       return state
   }

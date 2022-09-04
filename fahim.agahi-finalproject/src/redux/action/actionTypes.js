@@ -1,5 +1,3 @@
 export const TASK_ADDED = 'addTask'
 export const TASK_EDITED = 'editTask'
 export const TASK_DELETED = 'deleteTask'
-export const ADMIN_LOGIN = 'adminLogin'
-export const USER_LOGIN = 'userLogin'
