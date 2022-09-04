@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Management</title>
+    <style>
+      .body {
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+      }
+      .H1 {
+        background-color: #3574b4;
+        width: 100%;
+        height: 50px;
+        color: white;
+        display: flex;
+        align-items: center;
+        position: sticky;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-weight: 100;
+        font-size: large;
+        margin-top: 0px;
+      }
+      .text-align {
+        margin-left: 10%;
+      }
+      .div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+      .p1 {
+        font-weight: 600;
+        font-size: 21px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      .textarea {
+        width: 40%;
+        resize: none;
+        background-color: #e9eaeb;
+        color: #a2a1a1;
+        font-weight: 300;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        width: 100%;
+        border-top: 0px;
+        border-right: 0px;
+        border-left: 0px;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        border-bottom-color: #3574b4;
+      }
+      .addButton {
+        width: 100%;
+        height: 50px;
+        background-color: #3574b4;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        font-weight: lighter;
+        padding: 0px;
+      }
+      .cancelButton {
+        width: 100%;
+        height: 50px;
+        background-color: #3574b4;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        font-weight: lighter;
+        margin-left: 4px;
+      }
+      .parent {
+        height: 600px;
+        width: 100%;
+        top: 50%;
+        margin-top: 20px;
+        border-top-right-radius: 25px;
+        border-top-left-radius: 25px;
+        background-color: #3574b4;
+      }
+      .h2 {
+        color: white;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-weight: 100;
+        padding-top: 30px;
+        padding-left: 40px;
+      }
+      .child {
+        background-color: #aacdea;
+        height: 600px;
+        width: 100%;
+        top: 50%;
+        border-top-right-radius: 25px;
+        border-top-left-radius: 25px;
+      }
+      .text {
+        padding-top: 200px;
+      }
+      .text2 {
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+        overflow: auto;
+      }
+      .buttonComponent{
+        display: flex;
+        margin: 6px;
+
+      }
+    </style>
+  </head>
+  <body class="body">
+    <h1 class="H1">
+      <div class="text-align">Task Management > Edit</div>
+    </h1>
+    <div class="div">
+      <p class="p1">Edit Task</p>
+      <textarea class="textarea" name="Title" placeholder="Title"></textarea>
+      <textarea
+        class="textarea"
+        name="Description"
+        rows="40"
+        placeholder="Description of Task goes here"
+      ></textarea>
+      
+      <Menu
+        anchorEl={anchorEl}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'center'
+        }}
+        keepMounted
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right'
+        }}
+        open={Boolean(anchorEl)}
+        onClose={handleClose}>
+        <MenuItem>
+          inQA
+        </MenuItem>
+        <MenuItem>
+          Done
+        </MenuItem>
+        <MenuItem>
+            ToDO
+        </MenuItem>
+      </Menu>
+      <div class="buttonComponent">
+        <button class="addButton">
+            <i class="fas fa-edit" style="color: white; padding: 2px"></i>
+            Edit
+          </button>
+          <button class="cancelButton">
+            cancel
+          </button>
+      </div>
+    </div>
+    <!-- <div class="parent">
+      <h2 class="h2">Tasks</h2>
+      <div class="child">
+        <div class="text">
+          <p class="text2">You having nothing to do.</p>
+          <p class="text2">Go get some sleep.</p>
+        </div>
+      </div>
+    </div> -->
+  </body>
+</html>
