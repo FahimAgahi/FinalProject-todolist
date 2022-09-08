@@ -9,9 +9,21 @@ import store from "../../redux/store/configure-store";
 export const TaskCard = ({task}) => {
   const classes = useStyles();
   const navigate = useNavigate();
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     store.dispatch(deleteTask(id));
     navigate("/homePage");
+    let formData = new FormData();
+    formData.append('id', id);
+    await fetch('http://localhost:80/CRUD/delete', {
+      method: 'POST',
+      body: formData,
+    })
+    .then((res) => {
+      console.log(res)
+    })
+    .catch(()=> {
+      console.log('error');
+    });
   };
   return (
     <div className={classes.contain}>

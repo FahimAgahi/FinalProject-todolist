@@ -1,23 +1,35 @@
 import React, { useState } from "react";
 import { useStyles } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { Menu, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import useStateToProps from "../../redux/action/readData";
 import store from "../../redux/store/configure-store";
 import { editTask } from "../../redux/action/actions";
-import { text } from "@fortawesome/fontawesome-svg-core";
 import { useLocation } from 'react-router-dom'
 
 // function EditPage() {
 export const EditPage = ({}) => {
   const navigate = useNavigate();
   const location = useLocation()
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     store.dispatch(editTask(location.state.id, title, description, status));
     navigate("/homePage");
+    let formData = new FormData();
+    formData.append('title', title);
+    formData.append('description', description);
+    formData.append('status', status);
+    await fetch('http://localhost:80/CRUD/update', {
+      method: 'POST', body: formData,
+    })
+    .then((res) => {
+      console.log(res)
+    })
+    .catch(()=> {
+      console.log('error');
+    });
   };
   const [title, setTitle] = useState(location.state.title);
   const [description, setDescription] = useState(location.state.description);

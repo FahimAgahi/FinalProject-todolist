@@ -13,11 +13,24 @@ export const HomePage = ({}) => {
   const navigate = useNavigate();
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     store.dispatch(addTask(title, description));
     setDescription("");
     setTitle("");
+    let formData = new FormData();
+    formData.append('title', title);
+    formData.append('description', description);
+    formData.append('status', 'ToDo');
+    await fetch('http://localhost:80/CRUD/create', {
+      method: 'POST', body: formData,
+    })
+    .then((res) => {
+      console.log(res)
+    })
+    .catch(()=> {
+      console.log('error');
+    });
   };
   const tasks = useStateToProps((state) => {
     return state;
