@@ -43,8 +43,6 @@ export const EditPage = ({}) => {
     }
     if (e.target.name === 'status') {
       setStatus(e.target.value)
-      console.log('after change status')
-      console.log(e.target.value)
     }
   }
   let handleState = () => {
@@ -116,7 +114,6 @@ export const EditPage = ({}) => {
           value={title}
           type='text'
           onChange={(e) => handleChange(e)}
-
         ></input>
         <input
           className={classes.textarea1}
@@ -143,7 +140,6 @@ export const EditPage = ({}) => {
           </button>
           <div
             className={classes.cancelButton}
-            // onSubmit={() => handleSubmit()}
           >
             <button className={classes.cancelButton} onClick={() => navigate('/HomePage')}>Cancel</button>
           </div>
