@@ -42,7 +42,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
         backgroundColor: '#e9eaeb',
         color: 'black',
         fontWeight: '300',
-        fontSize:'20px',
         fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif",
         paddingTop: '3px',
         paddingLeft: '3px',
@@ -51,8 +50,27 @@ export const useStyles = makeStyles((theme: Theme) => ({
         borderRight: '0px',
         borderLeft: '0px',
         borderTopRightRadius: '4px',
-        borderTopLeftRadius: '4px' ,
-        borderBottomColor: '#3574b4'
+        borderTopLeftRadius: '4px',
+        height:'30px',
+        
+    },
+    textarea1:{
+        resize: 'none',
+        backgroundColor: '#e9eaeb',
+        color: 'black',
+        fontWeight: '300',
+        fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif",
+        paddingTop: '3px',
+        paddingLeft: '3px',
+        width: '100%',
+        borderTop: '0px',
+        borderRight: '0px',
+        borderLeft: '0px',
+        borderTopRightRadius: '4px',
+        borderTopLeftRadius: '4px',
+        height:'500px',
+        marginTop: '15px',
+        marginBottom: '15px'
     },
       addButton: {
         width: '100%',

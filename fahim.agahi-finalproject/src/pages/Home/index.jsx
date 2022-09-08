@@ -6,22 +6,22 @@ import { useNavigate } from "react-router-dom";
 import store from "../../redux/store/configure-store";
 import { addTask } from "../../redux/action/actions";
 import useStateToProps from "../../redux/action/readData";
+import TaskCard from "../../components/TaskCard";
 
-export const HomePage: React.FC = ({}) => {
+export const HomePage = ({}) => {
   const classes = useStyles();
   const navigate = useNavigate();
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
-  const handleSubmit = (e: any) => {
-    console.log(title, description);
+  const handleSubmit = (e) => {
     e.preventDefault();
     store.dispatch(addTask(title, description));
+    setDescription("");
+    setTitle("");
   };
-
-  const tasks = useStateToProps((state: any) => {
+  const tasks = useStateToProps((state) => {
     return state;
   });
-  console.log("tasks", tasks);
   return (
     <div className={classes.body1}>
       <h1 className={classes.h1}>
@@ -60,41 +60,11 @@ export const HomePage: React.FC = ({}) => {
       <div className={classes.parent}>
         <h2 className={classes.h2}>Tasks</h2>
         <div className={classes.child}>
-          {(tasks || []).map((task: any) => {
+          {(tasks || []).map((task) => {
             return (
-              <div key={task.id} className={classes.contain}>
-                <div className={classes.taskContainer}>
-                  <div className={classes.taskDetails}>
-                    <span className={classes.p1}>{task.title}</span>
-                    <div className={classes.taskDetailDescription}>
-                      {task.description}
-                    </div>
-                    <div className={classes.buttonContainer}>
-                      <button className={classes.stateButton}>Todo</button>
-                      <FontAwesomeIcon
-                        fixedWidth
-                        color="black"
-                        size="2x"
-                        icon={faEdit}
-                        onClick={() => navigate("/editPage")}
-                        cursor="pointer"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <TaskCard key={task.id} task={task} />
             );
           })}
-          {/* onClick={() =>
-                navigate('/editPage', {
-                  state: {
-                    id: item.id,
-                    title: item.title,
-                    description: item.description,
-                    status: item.status,
-                  },
-                })
-              } */}
           {/* <div className={classes.text}>
             <p className={classes.text2}>You having nothing to do.</p>
             <p className={classes.text2}>Go get some sleep.</p>
